@@ -1,5 +1,5 @@
 package teoria.introduccion.dos;
-
+//
 public abstract class FiguraRegular {
     private final int numeroLados;
     private final double longitudLado;
