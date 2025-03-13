@@ -2,8 +2,8 @@ package teoria.introduccion.dos;
 
 public final class Cuadrado extends FiguraRegular{
 
-    public Cuadrado(int numeroLados, double longitudLado) {
-        super(numeroLados, longitudLado);
+    public Cuadrado(double longitudLado) {
+        super(4, longitudLado);
     }
 
     @Override
