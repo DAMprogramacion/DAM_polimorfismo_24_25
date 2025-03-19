@@ -1,6 +1,6 @@
 package repaso;
 
-public class Empleado {
+public abstract class Empleado {
     private String nombreEmpleado;
     private String telefonoEmpleado;
     private double sueldoBase;
@@ -34,7 +34,7 @@ public class Empleado {
     protected void setSueldoBase(double sueldoBase) {
         this.sueldoBase = sueldoBase;
     }
-
+    protected abstract double calcularSueldoMensual();
     @Override
     public String toString() {
         double dSueldo = getSueldoBase();

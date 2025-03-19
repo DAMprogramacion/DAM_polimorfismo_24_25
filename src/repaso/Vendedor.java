@@ -22,9 +22,16 @@ public final class Vendedor extends Empleado{
         double suedo = super.calcularSueldoMensual() + super.calcularSueldoMensual() * comision / 100;
         return suedo;
     }*/
-    public double calcularSueldoMensual() {
+
+    @Override
+    protected double calcularSueldoMensual() {
         return getSueldoBase() + getSueldoBase() * comision / 100;
     }
+
+    /* hay que implementar el metodo abstracto
+       public double calcularSueldoMensual() {
+            return getSueldoBase() + getSueldoBase() * comision / 100;
+        }*/
     //nombreEmpleado,telefonoEmpleado,sueldo
     @Override
     public String toString() {

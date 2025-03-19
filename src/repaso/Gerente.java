@@ -16,10 +16,17 @@ public final class Gerente extends Empleado {
     public void setArea(Area area) {
         this.area = area;
     }
-    //creamos el metodo calcularSueldoMensual, que antes no estaba, pues estaba el del padre
-    public double calcularSueldoMensual() {
+
+    @Override
+    protected double calcularSueldoMensual() {
         return getSueldoBase() + area.getGratificacion();
     }
+
+    /*vamos ahora implementar el metodo abstracto del padre
+        //creamos el metodo calcularSueldoMensual, que antes no estaba, pues estaba el del padre
+        public double calcularSueldoMensual() {
+            return getSueldoBase() + area.getGratificacion();
+        }*/
     //nombreEmpleado,telefonoEmpleado,sueldo
     @Override
     public String toString() {

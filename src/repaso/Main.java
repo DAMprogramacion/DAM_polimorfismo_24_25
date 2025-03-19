@@ -37,27 +37,27 @@ public class Main {
                 count();
         System.out.printf("Nº de gerentes: %d%n", numeroGerentes);
         System.out.println("======mostrando suma sueldo de todos los gerentes=========");
-        //los objetos Empleado ya no tienen el metodo calcularSueldoMensual, solución:
-        //un bucle for y el operador instaceof
-        /*double totalSueldoGerentes = empleados.stream().
+        //Ahor si tienen los objetos Empleado el metodo calcularSueldoMensual,
+        double totalSueldoGerentes = empleados.stream().
                 filter(empleado -> empleado instanceof Gerente).
                 mapToDouble(Empleado::calcularSueldoMensual).
-                sum();*/
-        double totalSueldoGerentes = 0;
+                sum();
+       /* double totalSueldoGerentes = 0;
         for (Empleado empleado : empleados)
             if (empleado instanceof Gerente) {
                 Gerente gerente = (Gerente) empleado;
                 totalSueldoGerentes += gerente.calcularSueldoMensual();
-            }
+            }*/
         System.out.printf("El total de sueldo de todos los gerentes es %.2f%n", totalSueldoGerentes);
     }
-    /*no existe el metodo calcularSueldoMensual, hacemos algo similar que arriba
+    //Ya si  existe el metodo calcularSueldoMensual, hacemos algo similar que arriba
     private static Empleado getEmpleadoMasCaro(List<Empleado> empleados) {
         return empleados.stream().
                 max(Comparator.comparing(Empleado::calcularSueldoMensual)).
                 get();
-    }*/
-    private static Empleado getEmpleadoMasCaro(List<Empleado> empleados) {
+    }
+
+    /*private static Empleado getEmpleadoMasCaro(List<Empleado> empleados) {
         Empleado empleadoMasCaro = null;
         double sueldoMasCaro     = 0;
         for (Empleado empleado : empleados) {
@@ -77,7 +77,7 @@ public class Main {
             }
         }
         return empleadoMasCaro;
-    }
+    }*/
 
 }
 
