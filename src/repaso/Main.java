@@ -14,9 +14,9 @@ public class Main {
         Empleado vendedor3 = new Vendedor(
                 "antonio ramirez", "999556670", 1500, 30);
         Empleado gerente1 = new Gerente(
-                "juani ramirez", "999556678", 2000, "personal");
+                "juani ramirez", "999556678", 2000, Area.FABRICA);
         Empleado gerente2 = new Gerente(
-                "esteban ramirez", "999556600", 3000, "fabrica");
+                "esteban ramirez", "999556600", 3000, Area.PERSONAL);
         empleados.add(vendedor1); empleados.add(vendedor2); empleados.add(vendedor3);
         empleados.add(gerente1); empleados.add(gerente2);
 
@@ -37,17 +37,54 @@ public class Main {
                 count();
         System.out.printf("Nº de gerentes: %d%n", numeroGerentes);
         System.out.println("======mostrando suma sueldo de todos los gerentes=========");
-        double totalSueldoGerentes = empleados.stream().
+        //los objetos Empleado ya no tienen el metodo calcularSueldoMensual, solución:
+        //un bucle for y el operador instaceof
+        /*double totalSueldoGerentes = empleados.stream().
                 filter(empleado -> empleado instanceof Gerente).
                 mapToDouble(Empleado::calcularSueldoMensual).
-                sum();
+                sum();*/
+        double totalSueldoGerentes = 0;
+        for (Empleado empleado : empleados)
+            if (empleado instanceof Gerente) {
+                Gerente gerente = (Gerente) empleado;
+                totalSueldoGerentes += gerente.calcularSueldoMensual();
+            }
         System.out.printf("El total de sueldo de todos los gerentes es %.2f%n", totalSueldoGerentes);
     }
-
+    /*no existe el metodo calcularSueldoMensual, hacemos algo similar que arriba
     private static Empleado getEmpleadoMasCaro(List<Empleado> empleados) {
         return empleados.stream().
                 max(Comparator.comparing(Empleado::calcularSueldoMensual)).
                 get();
+    }*/
+    private static Empleado getEmpleadoMasCaro(List<Empleado> empleados) {
+        Empleado empleadoMasCaro = null;
+        double sueldoMasCaro     = 0;
+        for (Empleado empleado : empleados) {
+            if (empleado instanceof Vendedor) {
+                Vendedor vendedor = (Vendedor) empleado;
+                if (vendedor.calcularSueldoMensual() > sueldoMasCaro) {
+                    empleadoMasCaro = vendedor;
+                    sueldoMasCaro = vendedor.calcularSueldoMensual();
+                }
+            }
+            if (empleado instanceof Gerente) {
+                Gerente gerente = (Gerente) empleado;
+                if (gerente.calcularSueldoMensual() > sueldoMasCaro) {
+                    empleadoMasCaro = gerente;
+                    sueldoMasCaro = gerente.calcularSueldoMensual();
+                }
+            }
+        }
+        return empleadoMasCaro;
     }
 
 }
+
+
+
+
+
+
+
+

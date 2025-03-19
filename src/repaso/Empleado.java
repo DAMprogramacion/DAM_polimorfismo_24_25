@@ -26,8 +26,8 @@ public class Empleado {
     protected void setTelefonoEmpleado(String telefonoEmpleado) {
         this.telefonoEmpleado = telefonoEmpleado;
     }
-
-    protected double calcularSueldoMensual() {
+    //renombramos este metodo como getter del atributo sueldoBase, afecta a Vendedor
+    protected double getSueldoBase() {
         return sueldoBase;
     }
 
@@ -37,7 +37,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        double dSueldo = calcularSueldoMensual();
+        double dSueldo = getSueldoBase();
         String sSueldo = String.format("%.2f", dSueldo).replace(',', '.');
         return String.format("EMPLEADO: %s,%s,%s", getNombreEmpleado(), getTelefonoEmpleado(),sSueldo);
     }

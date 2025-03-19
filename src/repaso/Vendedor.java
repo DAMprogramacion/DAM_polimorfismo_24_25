@@ -17,10 +17,13 @@ public final class Vendedor extends Empleado{
         this.comision = comision;
     }
 
-    @Override
+    /*@Override  ya no aparece este metodo en el padre
     public double calcularSueldoMensual() {
         double suedo = super.calcularSueldoMensual() + super.calcularSueldoMensual() * comision / 100;
         return suedo;
+    }*/
+    public double calcularSueldoMensual() {
+        return getSueldoBase() + getSueldoBase() * comision / 100;
     }
     //nombreEmpleado,telefonoEmpleado,sueldo
     @Override

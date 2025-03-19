@@ -1,20 +1,24 @@
 package repaso;
-
+//cambiamos atributo area de String a Area (que es un enum, que asocia nombre y gratificación)
 public final class Gerente extends Empleado {
-    private String area;
+    private Area area;
 
     public Gerente(String nombreEmpleado, String telefonoEmpleado, double sueldoBase,
-                   String area) {
+                   Area area) {
         super(nombreEmpleado, telefonoEmpleado, sueldoBase);
         this.area = area;
     }
 
-    public String getArea() {
+    public Area getArea() {
         return area;
     }
 
-    public void setArea(String area) {
+    public void setArea(Area area) {
         this.area = area;
+    }
+    //creamos el metodo calcularSueldoMensual, que antes no estaba, pues estaba el del padre
+    public double calcularSueldoMensual() {
+        return getSueldoBase() + area.getGratificacion();
     }
     //nombreEmpleado,telefonoEmpleado,sueldo
     @Override
