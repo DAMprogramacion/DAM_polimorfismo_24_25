@@ -32,12 +32,16 @@ public class Main {
                 sorted().
                 forEach(System.out::println);
         System.out.println("======mostrando número de gerentes=========");
+        long numeroGerentes = empleados.stream().
+                filter(empleado -> empleado instanceof Gerente ).
+                count();
+        System.out.printf("Nº de gerentes: %d%n", numeroGerentes);
         System.out.println("======mostrando suma sueldo de todos los gerentes=========");
-
-
-
-
-
+        double totalSueldoGerentes = empleados.stream().
+                filter(empleado -> empleado instanceof Gerente).
+                mapToDouble(Empleado::calcularSueldoMensual).
+                sum();
+        System.out.printf("El total de sueldo de todos los gerentes es %.2f%n", totalSueldoGerentes);
     }
 
     private static Empleado getEmpleadoMasCaro(List<Empleado> empleados) {
