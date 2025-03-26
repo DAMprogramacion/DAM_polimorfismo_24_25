@@ -31,4 +31,6 @@ public final class SpecialistWorker extends Worker{
     public String getInformation() {
         return String.format("%s;%s", super.getInformation(), turn);
     }
+
+
 }
