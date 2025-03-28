@@ -1,4 +1,4 @@
-package examen;
+package examenRepaso;
 
 public enum TipoIVA {
     GENERAL(21), REDUCIDO(10), SUPERREDUCIDO(4);

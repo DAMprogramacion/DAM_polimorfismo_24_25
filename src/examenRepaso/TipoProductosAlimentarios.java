@@ -1,4 +1,4 @@
-package examen;
+package examenRepaso;
 
 public enum TipoProductosAlimentarios {
     PANADERIA(TipoIVA.SUPERREDUCIDO), ACEITE(TipoIVA.REDUCIDO) , LICOR(TipoIVA.GENERAL);

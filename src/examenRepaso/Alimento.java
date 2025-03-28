@@ -1,4 +1,4 @@
-package examen;
+package examenRepaso;
 
 public abstract class Alimento extends ProductoGenerico{
     private final TipoProductosAlimentarios tipoProductosAlimentarios;

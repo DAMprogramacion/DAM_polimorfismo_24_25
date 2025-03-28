@@ -1,4 +1,4 @@
-package examen;
+package examenRepaso;
 
 public abstract class ProductoGenerico implements Producto{
     private final String numeroReferencia;

@@ -1,4 +1,4 @@
-package examen;
+package examenRepaso;
 
 public class AceiteOliva extends Alimento{
     private final String marca;

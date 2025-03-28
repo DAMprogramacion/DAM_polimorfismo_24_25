@@ -1,4 +1,4 @@
-package examen;
+package examenRepaso;
 
 public class Helper {
     public static boolean validarNumeroReferencia (String numeroReferencia) {
