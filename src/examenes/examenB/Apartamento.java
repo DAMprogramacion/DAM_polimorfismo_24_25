@@ -21,6 +21,8 @@ public class Apartamento extends Alojamiento{
         return piscina;
     }
 
+
+
     @Override
     public double getPrecioSinIVA() {
         return numeroHabitaciones * PRECIO_POR_HABITACION_APARTAMENTO;

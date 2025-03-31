@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class HelperFecha {
     public static LocalDate getFecha (String fecha) {
-        if (fecha.matches("[0-9]{4}-(0[1-9]|1[12])-([1-9]|[12][0-9]|3[01])"))
+        if (fecha.matches("[0-9]{4}-(0[1-9]|1[012])-([1-9]|[12][0-9]|3[01])"))
             return LocalDate.parse(fecha);
         return null;
     }

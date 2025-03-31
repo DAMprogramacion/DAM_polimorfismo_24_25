@@ -15,7 +15,7 @@ public class Libro extends Obra{
 
     @Override
     public int getDuracion() {
-        return 240 * numeroVolumenes;
+        return 120 * numeroVolumenes;
     }
 
     @Override
